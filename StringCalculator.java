@@ -16,10 +16,11 @@ public class StringCalculator {
         if (inputString.length > 4) {
             int subtractLength;
             if ((inputString[1]).contains(inputString[4])) {
-                subtractLength = (inputString[1]).length() - inputString[4].length();
-                return (inputString[1].substring(0, subtractLength));
+                return Util.deleteRepeatedChars(inputString);
+//                subtractLength = (inputString[1]).length() - inputString[4].length();
+//                return (inputString[1].substring(0, subtractLength));
             }
-            return (inputString[1]);
+            return inputString[1];
         }
         throw new IllegalArgumentException("Ошибка формата ввода данных: \n " +
                 "возможные ошибки:\n" + "1. Каждая слагаемая строка должна быть не более 10ти символов\n" +
@@ -40,8 +41,8 @@ public class StringCalculator {
 
     String division(String[] inputString) {
         if (inputString.length > 3 && (inputString[1].length()) >= Integer.parseInt((inputString[3].substring(1)))) {
-            int divider = Integer.parseInt(inputString[3].substring(1));
-            return (inputString[1].substring(0, divider));
+            int res = inputString[1].length() - Integer.parseInt(inputString[3].substring(1));
+            return (inputString[1].substring(0, res+1));
         }
         throw new IllegalArgumentException("Ошибка формата ввода данных: \n " +
                 "возможные ошибки:\n" + "1. Каждая слагаемая строка должна быть не более 10ти символов\n" +
