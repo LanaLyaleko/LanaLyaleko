@@ -19,22 +19,6 @@ public class Util {
         }
         return true;
     }
-
-    static String deleteRepeatedChars(String[] checkedStrings) {
-        char[] input1 = checkedStrings[1].toCharArray();
-        char[] input2 = checkedStrings[4].toCharArray();
-        char[] result = new char[10];
-
-
-        for (int i = 0; i < input1.length; i++) {
-            for (int j = 0; j < input2.length; j++) {
-                if (input1[i] != input2[j]) {
-                    result[i] = input1[i];
-                }
-            }
-        }
-        return String.valueOf(result);
-    }
 }
 
 
