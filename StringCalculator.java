@@ -41,8 +41,8 @@ public class StringCalculator {
             if(inputString[1].length() == Integer.parseInt(inputString[3].substring(1))) {
                 return inputString[1].substring(0,1);
             }
-            int result = inputString[1].length() - (inputString[1].length() - Integer.parseInt(inputString[3].substring(1)));
-            return (inputString[1].substring(0, result+1));
+            int result = inputString[1].length()/Integer.parseInt(inputString[3].substring(1));
+            return (inputString[1].substring(0, result));
         }
         throw new IllegalArgumentException("Ошибка формата ввода данных: \n " +
                 "возможные ошибки:\n" + "1. Каждая слагаемая строка должна быть не более 10ти символов\n" +
